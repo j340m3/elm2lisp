@@ -8,6 +8,8 @@ pkgs.mkShell {
       python-pkgs.tree-sitter-grammars.tree-sitter-elm
       python-pkgs.tree-sitter
       python-pkgs.hy
+      python-pkgs.pytest
+      python-pkgs.jinja2
     ]))
   ];
 }
