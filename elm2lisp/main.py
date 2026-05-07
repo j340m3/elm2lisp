@@ -38,8 +38,8 @@ main =
 """
 
 elm = b"""bla : Int -> Int
-bla x =
-    case x of
+bla jeff =
+    case jeff of
         1 -> 2
         2 -> 4
         x -> 2*x"""
@@ -62,7 +62,7 @@ while not done:
             handle_case_of_expr(cursor.node)
         case _:
             pass
-    print(cursor.node.type,":", cursor.node.text)
+    print("│"*(cursor.depth-1)+"└"+("┬" if cursor.node.child_count else "─"),cursor.node.type,":", cursor.node.text)
     if not cursor.goto_first_child():
         if not cursor.goto_next_sibling():
             if cursor.goto_parent():
